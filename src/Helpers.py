@@ -9,18 +9,14 @@ CHARACTER_COLUMNS_TO_CLEAN = ["Fb_movie_id", "Fb_actor_ethnicity_id", "Fb_char_i
 NAME_COLUMNS_TO_CLEAN = ["Fb_char_actor_id"]
 
 def load_data(file_path):
-    loaders = {
-        "movie.metadata.tsv": load_movie_metadata,
-        "plot_summaries.txt": load_plot_summaries,
-        "character.metadata.tsv": load_character_metadata,
-        "name.clusters.txt": load_name_clusters,
-        "tvtropes.clusters.txt": load_tvtropes_clusters
-    }
-    
-    if file_path in loaders:
-        return loaders[file_path]()
-    else:
-        raise ValueError("Unsupported file_path: " + file_path)
+    df = []
+    if (file_path == "movie.metadata.tsv"):
+        df = pd.read_csv(DATA_FOLDER + "movie.metadata.tsv", sep='\t', header=None,
+                 names=["Wiki_movie_id", "Fb_movie_id", "Movie name",
+                        "release_date", "Movie box office revenue",
+                        "Movie runtime", "Movie languages", "Movie countries", "Movie genres"])
+        # Apply the clean_column function to the specified columns
+        df[MOVIE_COLUMNS_TO_CLEAN] =df[MOVIE_COLUMNS_TO_CLEAN].apply(clean_column)
 
 def load_movie_metadata():
     df = pd.read_csv(DATA_FOLDER + "movie.metadata.tsv", sep='\t', header=None,

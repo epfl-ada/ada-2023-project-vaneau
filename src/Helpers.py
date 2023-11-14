@@ -2,13 +2,21 @@ import pandas as pd
 import numpy as np
 import json
 
-DATA_FOLDER = "MovieSummaries/"
+DATA_FOLDER = "data/"
 
 MOVIE_COLUMNS_TO_CLEAN = ['Fb_movie_id', 'Movie languages', 'Movie genres', 'Movie countries']
 CHARACTER_COLUMNS_TO_CLEAN = ["Fb_movie_id", "Fb_actor_ethnicity_id", "Fb_char_id", "Fb_actor_id", "Freebase character/actor map ID"]
 NAME_COLUMNS_TO_CLEAN = ["Fb_char_actor_id"]
 
 def load_data(file_path):
+    """ This function loads the data and returns the respective DataFrame.
+    
+    Args:
+        data_path (str): datafolder path
+
+    Returns:
+        data (pd.DataFrame) : the DataFrame containing the values preprocessed and cleaned
+    """
     loaders = {
         "movie.metadata.tsv": load_movie_metadata,
         "plot_summaries.txt": load_plot_summaries,
@@ -23,6 +31,7 @@ def load_data(file_path):
         raise ValueError("Unsupported file_path: " + file_path)
 
 def load_movie_metadata():
+    # Read the csv file as a pandas dataframe
     df = pd.read_csv(DATA_FOLDER + "movie.metadata.tsv", sep='\t', header=None,
                      names=["Wiki_movie_id", "Fb_movie_id", "Movie name",
                             "release_date", "Movie box office revenue",
@@ -43,10 +52,13 @@ def load_movie_metadata():
     return df
 
 def load_plot_summaries():
+    # Read the csv file as a pandas dataframe
     df = pd.read_csv(DATA_FOLDER + "plot_summaries.txt", sep='\t', header=None, names=["Wiki_movie_id", "Summary"])
+
     return df
 
 def load_character_metadata():
+    # Read the csv file as a pandas dataframe
     df = pd.read_csv(DATA_FOLDER + "character.metadata.tsv", sep='\t', header=None,
                      names=["Wiki_movie_id", "Fb_movie_id", "release_date",
                             "Character", "Actor date of birth", "Actor gender",
@@ -67,6 +79,7 @@ def load_character_metadata():
     return df
 
 def load_name_clusters():
+    # Read the csv file as a pandas dataframe
     df = pd.read_csv(DATA_FOLDER + "name.clusters.txt", sep='\t', header=None, names=['Name', 'Fb_char_actor_id'])
     
     # Clean specified columns
@@ -75,9 +88,10 @@ def load_name_clusters():
     return df
 
 def load_tvtropes_clusters():
+    # Read the csv file as a pandas dataframe
     df = pd.read_csv(DATA_FOLDER + "tvtropes.clusters.txt", delimiter='\t', header=None, names=['CharType', 'Values'])
     
-    # Extract specific JSON values into separate columns
+    # Extract specific JSON values into separate columns from the column CharType
     df['Char'] = df['Values'].apply(lambda x: extract_json_values(x, 'char'))
     df['Movie'] = df['Values'].apply(lambda x: extract_json_values(x, 'movie'))
     df['Fb_char_actor_id'] = df['Values'].apply(lambda x: extract_json_values(x, 'id'))
@@ -86,13 +100,17 @@ def load_tvtropes_clusters():
     # Clean specified columns
     df[NAME_COLUMNS_TO_CLEAN] = df[NAME_COLUMNS_TO_CLEAN].apply(clean_column)
     
-    # Delete the ClusterID column
+    # Delete the Values column
     df.drop(columns=['Values'], inplace=True)
     
     return df
 
-# Define a function to remove the "/m/" prefix and codes/extra characters
+
 def clean_column(column):
+    """
+    This function remove the "/m/" prefix and codes/extra characters that are in the DataFrame column in argument
+
+    """
     # Remove "/m/" prefix
     column = column.str.replace('/m/', '', regex=False)
     
@@ -102,8 +120,12 @@ def clean_column(column):
     
     return column
 
-# Define a function to extract specific JSON values
+
 def extract_json_values(json_str, key):
+    """
+    This function extract specific JSON values
+    
+    """
     try:
         data = json.loads(json_str)
         return data.get(key, None)

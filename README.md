@@ -35,6 +35,7 @@ Second dwelling into the actors, we look at the diversity of actors used. Lookin
 ## Proposed additional datasets
 
 - @Ben : additional data on box-office revenues and movie budgets, thanks to TMDb API
+- Dataset correction : retrieve actors' ethnicities based on the freebase IDs
 
 ## Methods
 

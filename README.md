@@ -34,11 +34,14 @@ Second dwelling into the actors, we look at the diversity of actors used. Lookin
 
 ## Proposed additional datasets
 
-- @Lucas
+- @Ben : additional data on box-office revenues and movie budgets, thanks to TMDb API
 
 ## Methods
 
-- Markov chain for timeseries evolution
+- Markov chain for timeseries evolution : for each actor, keep track of the order of the movies he/she played in, and use this to infer typical transitions between genres from a movie to the following one  (transition matrix). As the choice of the next movie genre for an actor might not only depend of the very previous one, but of his career overall, different memory sizes for Markov chains should be tested.
+- Genres clustering and dimensionality reduction (pre-analytical step) : in the movie dataset, 363 genres are used. This makes the data very sparse and too difficult to interpret regarding what our goal is. By classifying movies into a smaller number of genres, we increase the number of datapoints per class, making our following analysis more relevant. Two methods are tested : dentrogram based on co-occurences (not satisfying) and PCA (compute abstract "eigengenres" and keep the ones that most explain our movie dataset)
+- NLP : embeddings of movie synopsis thanks to BERT model
+- Crawling : get additional data on box-office revenues and movie budgets
 
 ## Proposed timeline
 

@@ -31,6 +31,12 @@ Second dwelling into the actors, we look at the diversity of actors used. Lookin
 ## Research questions
  *A list of research questions you would like to address during the project.*
 
+What are the notable differences, if any, between the career trajectories of men and women in Hollywood? How do gender-based factors impact opportunities, roles, and longevity in the industry?
+
+Is there a correlation between the genres actors engage with and the subsequent movies they appear in? Do actors tend to be typecast based on the genres they initially perform in, and how does this influence their career paths?
+
+To what extent do roles in blockbuster films shape an actor's career trajectory in Hollywood?
+
 
 ## Proposed additional datasets
 
@@ -44,9 +50,19 @@ Second dwelling into the actors, we look at the diversity of actors used. Lookin
 - NLP : embeddings of movie synopsis thanks to BERT model
 - Crawling : get additional data on box-office revenues and movie budgets
 
-## Proposed timeline
+## Proposed timeline (3 weeks starting in December)
+
+week 1 - Start with the Genres clustering, Finalize the movie crawling, Prepare the pipeline for the Markov chain analysis
+week 2 - Perform the Markov chain analysis and the NLP on movie embeddings
+week 3 - Write the data story and build the website in parallel, Clean the github repository
+
 
 ## Organisation within the team
+
+- Markov chain for timeseries evolution: Erwann
+- Genres clustering and dimensionality reduction: Romain and Augustin
+- NLP: Lucas
+- Crawling and analysis of correlation between career path and movie revenues of the first film: Ben
 
 ## Question for TAs
 

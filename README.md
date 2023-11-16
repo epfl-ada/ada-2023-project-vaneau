@@ -6,6 +6,7 @@
 
 The motivation for our project stems from a surprising disparity between men and women when looking at the distribution of roles based on actors' ages. This difference might relate to different career developments and begs the question : are there traditional career paths in the movie industry ? in particular in Hollywood.
 
+
 To answer it, we first explore the type of characters actors played. As our character roles' dataset lacks in data, we look at a different way to characterize career path: the typical jumps between movie genres that actors operate. Finally, we hope to enlarge the characterization thanks to NLP technics performed on movie synopsis. Time series analysis will be key (Markov Chains, cross-correlations, ...).
 
 By comparison with the age curves of the actors to study impact of one on each other. Correlation with the revenue will identify shifting points in the career of actors.
@@ -37,7 +38,9 @@ To what extent do roles in blockbuster films shape an actor's career trajectory 
 ## Proposed timeline (3 weeks starting in December)
 
 week 1 - Finalize the movie crawling, Prepare the pipeline for the Markov chain analysis
+
 week 2 - Perform the Markov chain analysis and the NLP on movie embeddings
+
 week 3 - Write the data story and build the website in parallel, Clean the github repository
 
 

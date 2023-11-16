@@ -3,15 +3,14 @@
 # Title
 
 ## Abstract
-*should be 150 words* What’s the motivation behind your project? What story would you like to tell, and why?
 
 The motivation for our project stems from a surprising disparity: when looking at the distribution of roles based on actors' ages, the “golden age” is about 40 years old for men but is only 25 years old for women.
 
 Such a gap might relate to different career developments and begs the question : are there traditional career paths in the movie industry ?
 
-To answer it, restraining ourselves to Hollywood, we first explore the typical jumps between movie genres that actors operate during their career through transition matrices.
+To answer it, restraining ourselves to Hollywood, we first explore the typical jumps between movie genres that actors/actresses operate during their career through transition matrices.
 
-Then, we focus on the type of characters actors are asked to play, using the same tool. As our TV tropes dataset lacks in data, we hope to enlarge it through role characterization thanks to NLP technics performed on movie synopsis.
+Then, we focus on the type of characters actors/actresses are asked to play, using the same tool. As our TV tropes dataset lacks in data, we hope to enlarge it through role characterization thanks to NLP technics performed on movie synopsis.
 
 Eventually, we dive into correlations between an actor's first big success at the box-office and the aftermath for its career development.
 

@@ -2,6 +2,8 @@
 
 # Title
 
+# Shifting Roles: Decoding Hollywood's Career Evolution
+
 ## Abstract
 
 The motivation for our project stems from a surprising disparity between men and women when looking at the distribution of roles based on actors' ages. This difference might relate to different career developments and begs the question : are there traditional career paths in the movie industry ? in particular in Hollywood.
@@ -51,7 +53,6 @@ week 3 - Write the data story and build the website in parallel, Clean the githu
 - Dimensionality reduction: Augustin
 - NLP: Lucas
 - Crawling and analysis of correlation between career path and movie revenues of the first film: Ben
-
 
 ## Question for TAs
 

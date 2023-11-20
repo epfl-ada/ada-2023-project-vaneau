@@ -25,11 +25,10 @@ def get_identifier(name, year):
     response = make_request(url)
     results = response.get("results", [])
     if results:
-        id = results[0].get("id", 0)
-        return id
+        id = results[0].get('id', 0)
+        return (id)
     else:
-        return 0
-
+        return (0)
 
 def get_movie_details(id):
     url = f"https://api.themoviedb.org/3/movie/{id}?language=en-US"
@@ -62,37 +61,38 @@ def get_movie(name, year):
         return [None, None, None]
 
 
+
 def changeNA(value):
-    if value is None:
-        return pd.NA
+    evalued = eval(value)
+    if not evalued:
+        return (pd.NA)
     else:
-        return value
-
-
-def zeroToNA(value):
-    if value is None or (value is pd.NA):
-        return pd.NA
-    elif abs(value) < 1e-7:
-        return pd.NA
-    else:
-        return value
+        return (value)
 
 
 def extractRevenue(value):
-    if not (value is None) and not (math.isnan(value)):
-        return value.get("revenue", pd.NA)
+    if type(value) != pd._libs.missing.NAType:
+        evalued = eval(value)
+        return (evalued.get('revenue', pd.NA))
     else:
-        return pd.NA
+        return (pd.NA)
 
 
-def extractBudget(value):
-    if not (value is None) and not (math.isnan(value)):
-        return value.get("budget", pd.NA)
+def extractRevenue(value):
+    if type(value) != pd._libs.missing.NAType:
+        evalued = eval(value)
+        return (evalued.get('revenue', pd.NA))
     else:
-        return pd.NA
+        return (pd.NA)
 
 
-def process_chunk(start, end, movie_df):
+def extractRevenue(value):
+    if type(value) != pd._libs.missing.NAType:
+        evalued = eval(value)
+        return (evalued.get('revenue', pd.NA))
+    else:
+        return (pd.NA)
+      
     for i in range(start, end):
         name = movie_df.loc[i, 1]
         year = movie_df.loc[i, "year"]
@@ -108,4 +108,49 @@ def process_chunk(start, end, movie_df):
                 with open(f"./iterations/crawling_{i}.obj", "wb") as file:
                     pickle.dump(movie_df, file)
         except Exception as error:
-            print(f"iteration: {i}, error: {error}")
+            print(f'iteration: {i}, error: {error}')
+
+def extractCountry(row):
+    not_found = '--'
+    details = row['details']
+    if type(details) != pd._libs.missing.NAType:
+        details = eval(row['details'])
+        prod = details.get('production_countries', -1)
+        if prod:
+            country = prod[-1].get('iso_3166_1', not_found)
+            return (country)
+        return not_found
+    return not_found
+
+
+def extractRoles(row):
+    '''
+    Extracts the different cast roles from TMDB into their own 
+    categories.
+    Could be improved performance wise
+    '''
+
+    roles = {'Acting': [], 'Crew': [], 'Directing': []}
+    if row:
+        row = eval(row)
+        for character in row:
+            role = character.get('known_for_department', 'NoRole')
+            roles.get(role, []).append(character.get('name'))
+    return(pd.Series([roles['Acting'], roles['Crew'], roles['Directing']]))
+
+def extractProductionCompanies(row):
+    production_companies = []
+    if row:
+        row = eval(row)
+        companies = row.get('production_companies', [])
+        for company in companies:
+            production_companies.append(company.get('name','none'))
+    return(production_companies)
+
+def extractPopularityRating(row):
+    rating, votes = None, 0
+    if row:
+        row = eval(row)
+        rating = row.get('vote_average', None)
+        votes = row.get('vote_count', 0)
+    return(pd.Series([rating,votes]))

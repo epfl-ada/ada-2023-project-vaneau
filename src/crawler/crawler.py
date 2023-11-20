@@ -24,9 +24,9 @@ def get_identifier(name, year):
     results = response.get('results', [])
     if results:
         id = results[0].get('id', 0)
-        return(id)
+        return (id)
     else:
-        return(0)
+        return (0)
 
 
 def get_movie_details(id):
@@ -59,34 +59,39 @@ def get_movie(name, year):
     else:
         return ([None, None, None])
 
+
 def changeNA(value):
     evalued = eval(value)
     if not evalued:
-        return(pd.NA)
+        return (pd.NA)
     else:
-        return(value)
-    
+        return (value)
+
+
 def extractRevenue(value):
-    if type(value) !=pd._libs.missing.NAType:
+    if type(value) != pd._libs.missing.NAType:
         evalued = eval(value)
-        return(evalued.get('revenue', pd.NA))
+        return (evalued.get('revenue', pd.NA))
     else:
-        return(pd.NA)
-    
+        return (pd.NA)
+
+
 def extractRevenue(value):
-    if type(value) !=pd._libs.missing.NAType:
+    if type(value) != pd._libs.missing.NAType:
         evalued = eval(value)
-        return(evalued.get('revenue', pd.NA))
+        return (evalued.get('revenue', pd.NA))
     else:
-        return(pd.NA)
-    
+        return (pd.NA)
+
+
 def extractRevenue(value):
-    if type(value) !=pd._libs.missing.NAType:
+    if type(value) != pd._libs.missing.NAType:
         evalued = eval(value)
-        return(evalued.get('revenue', pd.NA))
+        return (evalued.get('revenue', pd.NA))
     else:
-        return(pd.NA)
-    
+        return (pd.NA)
+
+
 def process_chunk(start, end):
     for i in range(start, end):
         name = df_mov.loc[i, 1]
@@ -104,3 +109,51 @@ def process_chunk(start, end):
                     pickle.dump(df_mov, file)
         except Exception as error:
             print(f'iteration: {i}, error: {error}')
+
+
+def extractCountry(row):
+    not_found = '--'
+    details = row['details']
+    if type(details) != pd._libs.missing.NAType:
+        details = eval(row['details'])
+        prod = details.get('production_countries', -1)
+        if prod:
+            country = prod[-1].get('iso_3166_1', not_found)
+            return (country)
+        return not_found
+    return not_found
+
+
+def extractRoles(row):
+    '''
+    Extracts the different cast roles from TMDB into their own 
+    categories.
+    Could be improved performance wise
+    '''
+
+    roles = {'Acting': [], 'Crew': [], 'Directing': []}
+    if row:
+        row = eval(row)
+        for character in row:
+            role = character.get('known_for_department', 'NoRole')
+            roles.get(role, []).append(character.get('name'))
+    return(pd.Series([roles['Acting'], roles['Crew'], roles['Directing']]))
+
+def extractProductionCompanies(row):
+    production_companies = []
+    if row:
+        row = eval(row)
+        companies = row.get('production_companies', [])
+        for company in companies:
+            production_companies.append(company.get('name','none'))
+    return(production_companies)
+
+def extractPopularityRating(row):
+    rating, votes = None, 0
+    if row:
+        row = eval(row)
+        rating = row.get('vote_average', None)
+        votes = row.get('vote_count', 0)
+    return(pd.Series([rating,votes]))
+
+

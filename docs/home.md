@@ -1,18 +1,49 @@
 # Genders and genres
+<!-- Intro by Ben -->
+TODO BEN
 
-**How do actors of different genders evolve through different genres ?**
+Key question : **How do actors of different genders evolve through different genres ?**
 
-The motivation for our project stems from a surprising disparity between men and women when looking at the distribution of roles based on actors' ages. This difference might relate to different career developments and begs the question : are there traditional career paths in the movie industry ? in particular in Hollywood.
+# Characterizing genres
+
+A first look at our data more than 360 genres, therefore it seems relevant to reduce this diversity to have a more consistent analysis after.
+
+## Genre clustering
+<!-- Romain -->
+
+A first idea to reduce the number of genres is to do clustering and then define main genres by hand. Therefore we need to define a distance between each genre. As it appears that a movie is defined by several genres, the co-occurrence of genres will be used to quantify their proximity (high co-occurrence means close genres).
+
+A naive approach would be to directly do a clustering on the 363 genres. However,this clustering is not satisfying due to the nature of our data: one genre can be expressed in several ways (ex: “Comedy and Comedy film”) and one genre can represent in reality several genres (ex: “Comedy-drama”). A manual filtering has to be done before clustering.
+
+We filter the genres by not taking into account the genres with less than 500 movies (it does not significantly lower the number of films with genres) and by gathering the others into 30 custom main genres by hand. Looking now at the co-occurrence matrix, the cluster appears and it is confirmed by the dendrogram (figure: dendrogram). The threshold of the clustering algorithm is chosen such that we have a dozen of main genres (figure: main genre value counts).
+
+Looking at the repartition of genres along time, clear trends appear like the fall of Black & White and silent movies (figure: Proportion of movies of given genre along time)
 
 
-To answer it, we first explore the type of characters actors played. As our character roles' dataset lacks in data, we look at a different way to characterize career path: the typical jumps between movie genres that actors operate. Finally, we hope to enlarge the characterization thanks to NLP technics performed on movie synopsis. Time series analysis will be key (Markov Chains, cross-correlations, ...).
+## Creating "Eigengenres" - PCA analysis
+<!-- Augustin -->
+TODO AUGUSTIN
 
-By comparison with the age curves of the actors to study impact of one on each other. Correlation with the revenue will identify shifting points in the career of actors.
 
-# How do we define genres ?
+# Defining genre evolution through the career - Markov chains
+<!-- Erwann -->
+TODO ERWANN
 
-# Defining genre evolution through the career
 
-# Characterizing genre path differences
+# Comparing career timelines among actors
 
-# Shifting Roles: Decoding Hollywood's Career Evolution
+We have a good description of the career of an actor through the transition matrix. However, this description is a summary of a career, we want now to look at the evolution of the actor through its life by looking at shifts in genres played.
+
+## Shift time series
+<!-- Romain -->
+TODO ROMAIN
+
+
+## Using the Levenshtein distance
+<!-- Lucas -->
+TODO LUCAS
+
+
+# Conclusion
+<!-- Ben -->
+TODO BEN

@@ -1,7 +1,7 @@
 remote_theme: TeXt Theme
 title: Genders and genres
 description: The Vaneau team data story
-show_downloads: True
+show_downloads: False
 navigation:
   - title: Home
     url: /

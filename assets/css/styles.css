@@ -250,6 +250,10 @@ screen and (max-width: 960px) {
   }
 }
 
+.page-header {
+  background-image: linear-gradient(120deg, #eb2d0c, #e1ff36);
+}
+
 @media print,
 screen and (max-width: 720px) {
   body {

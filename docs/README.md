@@ -27,7 +27,7 @@ The task of reducing the number of genres can also be seen as a dimensionality r
 The explained variance from a specific eigengenre can be deduced from its eigenvalue. Ranking those according to the latter value will enable us to select only the most significant eigengenres. 
 
 
-<img src="ada-2023-project-vaneau/assets/img/eigengenre_explained_variance.png" style="display: block; margin: auto;" />
+<img src="/images/eigengenre_explained_variance.png" style="display: block; margin: auto;" />
 
 This figure shows that with only 52 eigengenres we can keep 90% of the information contained in the dataset.
 

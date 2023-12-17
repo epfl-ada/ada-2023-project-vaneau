@@ -34,7 +34,7 @@ This figure shows that with only 52 eigengenres we can keep 90% of the informati
 
 Visualizing those 52 eigengenres gives us the following plot:
 <div align="center">
-<img title="Eigengenres visualization" alt="Eigengenres visualization" src="images/img/eigengenre_visualization.png" >
+<img title="Eigengenres visualization" alt="Eigengenres visualization" src="images/eigengenre_visualization.png" >
 </div>
 
 If we take the third eigengenre from the left for instance, it groups genres that we would have fitted together : namely ‘silent_films’, ‘black_and_white’, and ‘short_films’.

@@ -53,7 +53,12 @@ We have a good description of the career of an actor through the transition matr
 
 ## Shift time series
 <!-- Romain -->
-TODO ROMAIN
+This method aims to characterize the change in genres played through a scalar number each year the actor played. To do that we first translate the genre obtained after the clustering for each movie into a vector of size the number of main genres and values 1 if the movie belongs to the genre, 0 otherwise. Then, for each age at which the actor played we compute the mean vector and we try to detect shifts in these vectors.
+
+The scalar value used to quantify the shift is at the heart of this method. In our analysis, we use, at a given age, the films three years before and after this age to detect the shift. We compute the mean cosine distance between the vector of the current age studied and the vectors of the 3 previous years and to balance this value we use the standard deviation of the distance between the current age vector and those of the surrounding years.
+
+This method works quite well for actors with long careers (figure: mel blanc). But it does not reveal any difference between men and women's career paths.
+
 
 
 ## Using the Levenshtein distance

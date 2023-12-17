@@ -22,7 +22,22 @@ Looking at the repartition of genres along time, clear trends appear like the fa
 
 ## Creating "Eigengenres" - PCA analysis
 <!-- Augustin -->
-TODO AUGUSTIN
+The task of reducing the number of genres can also be seen as a dimensionality reduction task, for which we have one great technique : Principal Component Analysis. Its idea is to project each movie onto all its genres (one-hot encoding) and then find the directions that explains the most variance of the dataset. Hence, the found directions : the so-called eigengenres help us define fewer dimensions to describe the movie genres while keeping most of the information.
+
+The explained variance from a specific eigengenre can be deduced from its eigenvalue. Ranking those according to the latter value will enable us to select only the most significant eigengenres. 
+
+<img title="Eigengenres explained variance" alt="Shows increasing added variance among eigenvectors from PCA" src="./../img/eigengenre_explained_variance.png">
+
+This figure shows that with only 52 eigengenres we can keep 90% of the information contained in the dataset.
+
+Visualizing those 52 eigengenres gives us the following plot:
+
+<img title="Eigengenres visualization" alt="Shows increasing added variance among eigenvectors from PCA" src="./../img/eigengenre_visualization.png">
+
+If we take the third eigengenre from the left for instance, it groups genres that we would have fitted together : namely ‘silent_films’, ‘black_and_white’, and ‘short_films’.
+
+Another observation is that genres that are rarely used are not significant in establishing eigenvectors.
+
 
 
 # Defining genre evolution through the career - Markov chains

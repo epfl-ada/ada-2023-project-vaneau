@@ -50,7 +50,7 @@ h6 {
 }
 
 a {
-  color: rgb(236, 95, 14);
+  color: #9c542a;
   text-decoration: none;
 }
 
@@ -131,6 +131,7 @@ header ul {
   list-style: none;
   height: 40px;
   padding: 0;
+  background-image: url('./../../img/eigengenre_visualization.png');
   background: #f4f4f4;
   border-radius: 5px;
   border: 1px solid #e0e0e0;

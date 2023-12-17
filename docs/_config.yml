@@ -1,9 +1,9 @@
 theme: jekyll-theme-cayman
 title: Genders and genres
 description: The Vaneau team data story
+github.owner_name: Vaneau team
+github.project_name: Genres and genders
 show_downloads: False
 navigation:
   - title: Home
-    url: /
-  - title: Example
-    url: example
+    url: home

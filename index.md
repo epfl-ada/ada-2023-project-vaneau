@@ -6,7 +6,7 @@ cover:  "/assets/logo.jpg"
 ---
 
 <!-- Intro by Ben -->
-TODO BEN
+**INTRODUCTION : TODO BEN**
 
 Key question : **How do actors of different genders evolve through different genres ?**
 
@@ -51,7 +51,7 @@ Another observation is that genres that are rarely used are not significant in e
 
 # Defining genre evolution through the career - Markov chains
 <!-- Erwann -->
-TODO ERWANN
+**TODO ERWANN**
 
 
 # Comparing career timelines among actors
@@ -70,9 +70,9 @@ This method works quite well for actors with long careers (figure: mel blanc). B
 
 ## Using the Levenshtein distance
 <!-- Lucas -->
-TODO LUCAS
+**TODO LUCAS**
 
 
 # Conclusion
 <!-- Ben -->
-TODO BEN
+**TODO BEN**

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Genders and genres"
+title:  "Gendered trajectories across movie genres"
 author: Ben, Lucas, Romain, Erwann, and Augustin
 cover:  "/assets/movie_banner.jpg"
 ---
@@ -8,7 +8,7 @@ cover:  "/assets/movie_banner.jpg"
 <!-- Intro by Ben -->
 **INTRODUCTION : TODO BEN**
 
-Key question : **How do actors of different genders evolve through different genres ?**
+Key question : **How do actors of different genders evolve through different genres in the movie industry?**
 
 # Characterizing genres
 

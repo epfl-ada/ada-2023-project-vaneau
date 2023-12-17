@@ -26,15 +26,16 @@ The task of reducing the number of genres can also be seen as a dimensionality r
 
 The explained variance from a specific eigengenre can be deduced from its eigenvalue. Ranking those according to the latter value will enable us to select only the most significant eigengenres. 
 
-![Explained variance](/images/eigengenre_explained_variance.png){align="center"}
-
-
+<div align="center">
+<img title="Explained variance" alt="Explained variance" src="/images/eigengenre_explained_variance.png" align="center">
+</div>
 
 This figure shows that with only 52 eigengenres we can keep 90% of the information contained in the dataset.
 
 Visualizing those 52 eigengenres gives us the following plot:
-
-![Eigengenres visualization](/images/eigengenre_visualization.png){align="center"}
+<div align="center">
+<img title="Eigengenres visualization" alt="Eigengenres visualization" src="/images/eigengenre_visualization.png" >
+</div>
 
 If we take the third eigengenre from the left for instance, it groups genres that we would have fitted together : namely ‘silent_films’, ‘black_and_white’, and ‘short_films’.
 

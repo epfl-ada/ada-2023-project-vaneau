@@ -29,7 +29,7 @@ The explained variance from a specific eigengenre can be deduced from its eigenv
 <img title="Eigengenres explained variance" alt="Shows increasing added variance among eigenvectors from PCA" src="/img/eigengenre_explained_variance.png">
 
 
-<img src="/assets/img/eigengenre_explained_variance.png" style="display: block; margin: auto;" />
+<img src="/docs/assets/img/eigengenre_explained_variance.png" style="display: block; margin: auto;" />
 
 This figure shows that with only 52 eigengenres we can keep 90% of the information contained in the dataset.
 

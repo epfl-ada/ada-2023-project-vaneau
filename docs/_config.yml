@@ -7,3 +7,6 @@ show_downloads: False
 navigation:
   - title: Home
     url: /
+
+include:
+  - "images"

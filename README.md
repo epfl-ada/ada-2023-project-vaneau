@@ -1,58 +1,71 @@
-# ada-2023-project-vaneau
+# Genders and genres
+<!-- Intro by Ben -->
+TODO BEN
 
-# Title
+Key question : **How do actors of different genders evolve through different genres ?**
 
-# Shifting Roles: Decoding Hollywood's Career Evolution
+# Characterizing genres
 
-## Abstract
+A first look at our data more than 360 genres, therefore it seems relevant to reduce this diversity to have a more consistent analysis after.
 
-The motivation for our project stems from a surprising disparity between men and women when looking at the distribution of roles based on actors' ages. This difference might relate to different career developments and begs the question : are there traditional career paths in the movie industry ? in particular in Hollywood.
+## Genre clustering
+<!-- Romain -->
 
+A first idea to reduce the number of genres is to do clustering and then define main genres by hand. Therefore we need to define a distance between each genre. As it appears that a movie is defined by several genres, the co-occurrence of genres will be used to quantify their proximity (high co-occurrence means close genres).
 
-To answer it, we first explore the type of characters actors played. As our character roles' dataset lacks in data, we look at a different way to characterize career path: the typical jumps between movie genres that actors operate. Finally, we hope to enlarge the characterization thanks to NLP technics performed on movie synopsis. Time series analysis will be key (Markov Chains, cross-correlations, ...).
+A naive approach would be to directly do a clustering on the 363 genres. However,this clustering is not satisfying due to the nature of our data: one genre can be expressed in several ways (ex: “Comedy and Comedy film”) and one genre can represent in reality several genres (ex: “Comedy-drama”). A manual filtering has to be done before clustering.
 
-By comparison with the age curves of the actors to study impact of one on each other. Correlation with the revenue will identify shifting points in the career of actors.
+We filter the genres by not taking into account the genres with less than 500 movies (it does not significantly lower the number of films with genres) and by gathering the others into 30 custom main genres by hand. Looking now at the co-occurrence matrix, the cluster appears and it is confirmed by the dendrogram (figure: dendrogram). The threshold of the clustering algorithm is chosen such that we have a dozen of main genres (figure: main genre value counts).
 
-
-## Research questions
-
-What are the notable differences, if any, between the career trajectories of men and women in Hollywood? How do gender-based factors impact opportunities, roles, and longevity in the industry?
-
-Is there a correlation between the genres actors engage with and the subsequent movies they appear in? Do actors tend to be typecast based on the genres they initially perform in, and how does this influence their career paths?
-
-To what extent do roles in blockbuster films shape an actor's career trajectory in Hollywood?
+Looking at the repartition of genres along time, clear trends appear like the fall of Black & White and silent movies (figure: Proportion of movies of given genre along time)
 
 
-## Proposed additional datasets
+## Creating "Eigengenres" - PCA analysis
+<!-- Augustin -->
+The task of reducing the number of genres can also be seen as a dimensionality reduction task, for which we have one great technique : Principal Component Analysis. Its idea is to project each movie onto all its genres (one-hot encoding) and then find the directions that explains the most variance of the dataset. Hence, the found directions : the so-called eigengenres help us define fewer dimensions to describe the movie genres while keeping most of the information.
 
-- Additional data on box-office revenues, movie budgets and other details, using TMDb API
-- Dataset correction : retrieve actors' ethnicities based on the freebase IDs
+The explained variance from a specific eigengenre can be deduced from its eigenvalue. Ranking those according to the latter value will enable us to select only the most significant eigengenres. 
 
+![Explained variance](/assets/img/eigengenre_explained_variance.png)
 
-## Methods
+<img src="/ada-2023-project-vaneau/assets/img/eigengenre_explained_variance.png" style="display: block; margin: auto;" />
 
-- Markov chain for timeseries evolution : for each actor, keep track of the order of the movies he/she played in, and use this to infer typical transitions between genres from a movie to the following one  (transition matrix). As the choice of the next movie genre for an actor might not only depend of the very previous one, but of his career overall, different memory sizes for Markov chains might be tested.
-- Genres clustering and dimensionality reduction (pre-analytical step) : in the movie dataset, 363 genres are used. This makes the data very sparse and too difficult to interpret regarding what our goal is. By classifying movies into a smaller number of genres, we increase the number of datapoints per class, making our following analysis more relevant. Two methods are tested : dentrogram based on co-occurences and PCA (compute abstract "eigengenres" and keep the ones that explain the most of our movie dataset)
-- NLP : embeddings of movie synopsis thanks to BERT model
-- Crawling : get additional data on box-office revenues and movie budgets
+This figure shows that with only 52 eigengenres we can keep 90% of the information contained in the dataset.
 
+Visualizing those 52 eigengenres gives us the following plot:
 
-## Proposed timeline (3 weeks starting in December)
+<img title="Eigengenres visualization" alt="Shows increasing added variance among eigenvectors from PCA" src="/img/eigengenre_visualization.png">
 
-week 1 - Finalize the movie crawling, Prepare the pipeline for the Markov chain analysis
+If we take the third eigengenre from the left for instance, it groups genres that we would have fitted together : namely ‘silent_films’, ‘black_and_white’, and ‘short_films’.
 
-week 2 - Perform the Markov chain analysis and the NLP on movie embeddings
-
-week 3 - Write the data story and build the website in parallel, Clean the github repository
+Another observation is that genres that are rarely used are not significant in establishing eigenvectors.
 
 
-## Organisation within the team
 
-- Markov chain for timeseries evolution: Erwann
-- Genres clustering: Romain
-- Dimensionality reduction: Augustin
-- NLP: Lucas
-- Crawling and analysis of correlation between career path and movie revenues of the first film: Ben
+# Defining genre evolution through the career - Markov chains
+<!-- Erwann -->
+TODO ERWANN
 
-## Question for TAs
 
+# Comparing career timelines among actors
+
+We have a good description of the career of an actor through the transition matrix. However, this description is a summary of a career, we want now to look at the evolution of the actor through its life by looking at shifts in genres played.
+
+## Shift time series
+<!-- Romain -->
+This method aims to characterize the change in genres played through a scalar number each year the actor played. To do that we first translate the genre obtained after the clustering for each movie into a vector of size the number of main genres and values 1 if the movie belongs to the genre, 0 otherwise. Then, for each age at which the actor played we compute the mean vector and we try to detect shifts in these vectors.
+
+The scalar value used to quantify the shift is at the heart of this method. In our analysis, we use, at a given age, the films three years before and after this age to detect the shift. We compute the mean cosine distance between the vector of the current age studied and the vectors of the 3 previous years and to balance this value we use the standard deviation of the distance between the current age vector and those of the surrounding years.
+
+This method works quite well for actors with long careers (figure: mel blanc). But it does not reveal any difference between men and women's career paths.
+
+
+
+## Using the Levenshtein distance
+<!-- Lucas -->
+TODO LUCAS
+
+
+# Conclusion
+<!-- Ben -->
+TODO BEN

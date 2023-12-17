@@ -1,58 +1,89 @@
-# ada-2023-project-vaneau
+# [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme)
 
-# Title
+[![license](https://img.shields.io/github/license/kitian616/jekyll-TeXt-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE)
+[![Gem Version](https://img.shields.io/gem/v/jekyll-text-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/releases)
+[![Travis](https://img.shields.io/travis/kitian616/jekyll-TeXt-theme.svg)](https://travis-ci.org/kitian616/jekyll-TeXt-theme)
+[![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-1462ab.svg?logo=paypal)](https://www.paypal.me/kitian616)
+[![Tip Me via Bitcoin](https://img.shields.io/badge/Bitcoin-tip%20me-f7931a.svg?logo=bitcoin)](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/3Fkufxcw2xd8HnaRJBNK4ccdtkUDyyNu4V.jpg)
 
-# Shifting Roles: Decoding Hollywood's Career Evolution
+![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg)
 
-## Abstract
+![TeXt Theme Details](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-layouts.png)
 
-The motivation for our project stems from a surprising disparity between men and women when looking at the distribution of roles based on actors' ages. This difference might relate to different career developments and begs the question : are there traditional career paths in the movie industry ? in particular in Hollywood.
+TeXt is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
 
+**[Change Log](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/CHANGELOG.md)** | **[中文](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/README-zh.md)**
 
-To answer it, we first explore the type of characters actors played. As our character roles' dataset lacks in data, we look at a different way to characterize career path: the typical jumps between movie genres that actors operate. Finally, we hope to enlarge the characterization thanks to NLP technics performed on movie synopsis. Time series analysis will be key (Markov Chains, cross-correlations, ...).
+## Features
 
-By comparison with the age curves of the actors to study impact of one on each other. Correlation with the revenue will identify shifting points in the career of actors.
+- Responsive
+- Semantic HTML
+- Skins
+- Highlight Theme
+- Internationalization
+- Search
+- Table of contents
+- Authors
+- Additional styles (alert, tag, image, icon, button, grid, etc)
+- Extensions (audios, videos, slides, demos)
+- Markdown enhancements ([MathJax](https://www.mathjax.org/), [mermaid](https://mermaidjs.github.io/), [chartjs](http://www.chartjs.org/))
+- Sharing ([AddToAny](https://www.addtoany.com/), [AddThis](https://www.addthis.com/))
+- Comments ([Disqus](https://disqus.com/), [Gitalk](https://gitalk.github.io/), [Valine](https://valine.js.org/en/))
+- Pageview ([LeanCloud](https://leancloud.cn/))
+- Analytics ([Google Analytics](https://analytics.google.com/analytics/web/))
+- RSS ([jekyll-feed](https://github.com/jekyll/jekyll-feed))
 
+## Skins
 
-## Research questions
+TeXt has 6 built-in skins, you can also set up your own skin.
 
-What are the notable differences, if any, between the career trajectories of men and women in Hollywood? How do gender-based factors impact opportunities, roles, and longevity in the industry?
+| `default` | `dark` | `forest` |
+| --- |  --- | --- |
+| ![Default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg) | ![Dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg) | ![Forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg) |
 
-Is there a correlation between the genres actors engage with and the subsequent movies they appear in? Do actors tend to be typecast based on the genres they initially perform in, and how does this influence their career paths?
+| `ocean` | `chocolate` | `orange` |
+| --- |  --- | --- |
+| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg) |
 
-To what extent do roles in blockbuster films shape an actor's career trajectory in Hollywood?
+### Highlight Theme
 
+TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
 
-## Proposed additional datasets
+| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
+| --- |  --- | --- | --- |  --- |
+| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
 
-- Additional data on box-office revenues, movie budgets and other details, using TMDb API
-- Dataset correction : retrieve actors' ethnicities based on the freebase IDs
+## Documentation
 
+### Start
 
-## Methods
+- [Quick Start](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/quick-start)
+- [Update from 1.x to 2.x](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/update-from-1-to-2)
 
-- Markov chain for timeseries evolution : for each actor, keep track of the order of the movies he/she played in, and use this to infer typical transitions between genres from a movie to the following one  (transition matrix). As the choice of the next movie genre for an actor might not only depend of the very previous one, but of his career overall, different memory sizes for Markov chains might be tested.
-- Genres clustering and dimensionality reduction (pre-analytical step) : in the movie dataset, 363 genres are used. This makes the data very sparse and too difficult to interpret regarding what our goal is. By classifying movies into a smaller number of genres, we increase the number of datapoints per class, making our following analysis more relevant. Two methods are tested : dentrogram based on co-occurences and PCA (compute abstract "eigengenres" and keep the ones that explain the most of our movie dataset)
-- NLP : embeddings of movie synopsis thanks to BERT model
-- Crawling : get additional data on box-office revenues and movie budgets
+### Customization
 
+- [Configuration](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/configuration)
+- [Navigation](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/navigation)
+- [Layouts](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/layouts)
+- [Logo and Favicon](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/logo-and-favicon)
+- [Authors](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/authors)
+- [Internationalization](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/i18n)
 
-## Proposed timeline (3 weeks starting in December)
+### Content
 
-week 1 - Finalize the movie crawling, Prepare the pipeline for the Markov chain analysis
+- [Writing Posts](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/writing-posts)
+- [Additional styles](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/additional-styles)
+- [Extensions](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/extensions)
+- [Markdown Enhancements](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/markdown-enhancements)
 
-week 2 - Perform the Markov chain analysis and the NLP on movie embeddings
+## Demo Pages
 
-week 3 - Write the data story and build the website in parallel, Clean the github repository
+| Name | Description |
+| --- | --- |
+| [Home](https://kitian616.github.io/jekyll-TeXt-theme/test/) | Home page |
+| [Archive](https://kitian616.github.io/jekyll-TeXt-theme/archive.html) | Archive page |
+| [Layout Examples](https://kitian616.github.io/jekyll-TeXt-theme/samples.html) | Examples for different layouts |
 
+## License
 
-## Organisation within the team
-
-- Markov chain for timeseries evolution: Erwann
-- Genres clustering: Romain
-- Dimensionality reduction: Augustin
-- NLP: Lucas
-- Crawling and analysis of correlation between career path and movie revenues of the first film: Ben
-
-## Question for TAs
-
+TeXt Theme is [MIT licensed](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE).

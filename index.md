@@ -2,7 +2,7 @@
 layout: post
 title:  "Genders and genres"
 author: Ben, Lucas, Romain, Erwann, and Augustin
-cover:  "/assets/logo.jpg"
+cover:  "/assets/movie_banner.jpg"
 ---
 
 <!-- Intro by Ben -->

@@ -9,18 +9,15 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: Let's talk about movies
+title: Genders and genres
 subtitle: "It's time to tell a story"
-email: blcentra@gmail.com
-name: Melanie Brtan
+email: augustin.desombre@epfl.ch
+name: Augustin Desombre
 description: >
-  A simple yet classy theme for your Jekyll website or blog.
+  Data story for the ADA course at EPFL
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
-baseurl: "/runtimeterror_ds" # the subpath of your site, e.g. /blog/
-url: https://bencentra.com/centrarium/ # the base hostname & protocol for your site
-cover: "/assets/James-Bond-No-Time-To-Die-OMEGA-Filmplakat.jpg"
 logo: "/assets/logo.png"
 
 # Build settings

@@ -1,4 +1,4 @@
-remote_theme: TeXt Theme
+theme: jekyll-theme-cayman
 title: Genders and genres
 description: The Vaneau team data story
 show_downloads: False

@@ -6,4 +6,4 @@ github.project_name: Genres and genders
 show_downloads: False
 navigation:
   - title: Home
-    url: home
+    url: /

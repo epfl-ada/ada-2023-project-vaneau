@@ -21,17 +21,15 @@ A first idea to reduce the number of genres is to do clustering and then define 
 
 A naive approach would be to directly do a clustering on the 363 genres. However,this clustering is not satisfying due to the **nature of our data**: one genre can be expressed in several ways (ex: “Comedy and Comedy film”) and one genre can represent in reality several genres (ex: “Comedy-drama”). A manual filtering has to be done before clustering.
 
-We **filter** the genres by not taking into account the genres with less than 500 movies (it does not significantly lower the number of films with genres) and by gathering the others into 30 custom main genres **by hand**. Looking now at the co-occurrence matrix, the **cluster appears** and it is confirmed by the dendrogram (figure: dendrogram). The threshold of the clustering algorithm is chosen such that we have a **dozen of main genres**.
+We **filter** the genres by not taking into account the genres with less than 500 movies (it does not significantly lower the number of films with genres) and by gathering the others into 30 custom main genres **by hand**. Looking now at the co-occurrence matrix, the **cluster appears** and it is confirmed by the dendrogram. The threshold of the clustering algorithm is chosen such that we have a **dozen of main genres**.
 
-(figure: main genre value counts).
 <div align="center">
-<img title="Main genre value counts" alt="FIGURE TO ADD" src="images/todo.png" align="center">
+<img title="Main genre clustering dendrogram" alt="Main genre clustering dendrogram" src="images/dendrogram_clusters.png" align="center">
 </div>
 
 
 Looking at the repartition of genres along time, **clear trends appear** like the fall of Black & White and silent movies. 
 
-(figure: Proportion of movies of given genre along time)
 <div align="center">
 <img title="Proportion of movies of given genre along time" alt="FIGURE TO ADD" src="images/todo.png" align="center">
 </div>
@@ -114,12 +112,19 @@ This method aims to characterize the change in genres played through a **scalar 
 
 The scalar value used to quantify the shift is at the heart of this method. In our analysis, we use, at a given age, the films three years before and after this age to detect the shift. We compute the **mean cosine distance** between the vector of the current age studied and the vectors of the 3 previous years and to balance this value we use the **standard deviation** of the distance between the current age vector and those of the surrounding years.
 
-This method works quite well for actors with long careers (figure: Brad Pitt and Sandra Bullock). But it does not reveal any difference between men and women's career paths (figure: shift male/female). Maybe the difference is not significant but it can also be due to a lack of actors with very long careers or a lack of movies in careers of the actors in our data.
-
+This method works quite well for actors with long careers as for Brad Pitt and Sandra Bullock. 
 
 <div align="center">
-<img title="Figure Brad Pitt and Sandra Bullock" alt="FIGURE TO ADD" src="images/todo.png" align="center">
+<img title="Brad Pitt career" alt="Brad Pitt career" src="images/brad_pitt.png" align="center">
+<img title="Sandra Bullock career" alt="Sandra Bullock career" src="images/sandra_bullock.png" align="center">
 </div>
+
+But it does not reveal any difference between men and women's career paths. Maybe the difference is not significant but it can also be due to a lack of actors with very long careers or a lack of movies in careers of the actors in our data.
+
+<div align="center">
+<img title="Genders comparison of shift trends" alt="Genders comparison of shift trends"  src="images/shift_significance_gender.png" align="center">
+</div>
+
 
 
 

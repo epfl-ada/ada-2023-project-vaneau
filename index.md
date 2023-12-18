@@ -31,7 +31,7 @@ We **filter** the genres by not taking into account the genres with less than 50
 Looking at the repartition of genres along time, **clear trends appear** like the fall of Black & White and silent movies. 
 
 <div align="center">
-<img title="Proportion of movies of given genre along time" alt="FIGURE TO ADD" src="images/todo.png" align="center">
+<img title="Proportion of movies of given genre along time" alt="FIGURE TO ADD" src="images/genres_through_time.png" align="center">
 </div>
 
 

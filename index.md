@@ -114,10 +114,41 @@ The scalar value used to quantify the shift is at the heart of this method. In o
 
 This method works quite well for actors with long careers as for Brad Pitt and Sandra Bullock. 
 
-<div align="center">
-<img title="Brad Pitt career" alt="Brad Pitt career" src="images/brad_pitt.png" align="center">
-<img title="Sandra Bullock career" alt="Sandra Bullock career" src="images/sandra_bullock.png" align="center">
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Images Side by Side</title>
+  <style>
+    .image-container {
+      display: flex;
+    }
+
+    .image-container img {
+      width: 50%; /* Adjust the width as needed */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="image-container">
+  <div>
+    <div align=center>Brad Pitt</div>
+    <img src="images/brad_pitt.png" alt="Image 1">
+  </div>
+
+  <div>
+    <div align=center>Sandra Bullock</div>
+    <img src="images/sandra_bullock.png" alt="Image 1">
+  </div>
 </div>
+
+</body>
+</html>
+
 
 But it does not reveal any difference between men and women's career paths. Maybe the difference is not significant but it can also be due to a lack of actors with very long careers or a lack of movies in careers of the actors in our data.
 

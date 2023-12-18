@@ -118,7 +118,7 @@ This method works quite well for actors with long careers as for Brad Pitt and S
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width * 1.5, initial-scale=1.0">
   <title>Two Images Side by Side</title>
   <style>
     .image-container {
@@ -126,7 +126,7 @@ This method works quite well for actors with long careers as for Brad Pitt and S
     }
 
     .image-container img {
-      width: 50%; /* Adjust the width as needed */
+      width: 100%; /* Adjust the width as needed */
       height: auto;
     }
   </style>

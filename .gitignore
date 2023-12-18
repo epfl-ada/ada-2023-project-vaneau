@@ -3,3 +3,4 @@
 *.pyc
 ratings.tsv
 roles.tsv
+.ipynb_checkpoints/*

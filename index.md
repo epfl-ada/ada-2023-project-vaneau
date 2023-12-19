@@ -188,9 +188,8 @@ Although we can not give the list of all actors by cluster, we can explain below
 
 Once our clusters were formed, we computed the women percentage in each of them. Observing some important variations from one cluster to another and knowing the overall percentage of women in the whole dataset (before clustering), we performed binomial tests to measure how significant these percentages were. Here are our results : 
 
-[insert figure : Levenshtein results]
 <div align="center">
-<img alt="Levenshtein results"  src="images/todo.png">
+<img alt="Levenshtein results"  src="images/Levenshtein results.png">
 </div>
 
 These are very interesting results ! We observe **huge disparities in women representation** from one cluster to another.

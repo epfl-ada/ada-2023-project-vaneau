@@ -6,10 +6,21 @@ cover:  "/assets/movie_banner.jpg"
 ---
 
 <!-- Intro by Ben -->
-**INTRODUCTION : TODO BEN**
 Key question : **How do actors of different genders evolve through different genres in the movie industry?**
+Take a seat, grab your popcorn, and join us with for our data story!!
 
-hallo hllooooo?
+With an extensive dataset of movies, actors, and movie synopsis at our disposal we set on a journey to put on a spotlight on how biological sex influences career paths in the movie industry. The opening scene of our data story that sets the stage for our future analysis is this simple, but revealing plot:
+
+<div align="center">
+<img title="Role distribution for age" alt="a plot showing two histogramms one for males one for females, x axis is age, y axis the count of roles at that age. Female histogramm is much smaller and peaks earlier (around 27 years compared to 37 years for males)" src="images/genderDistribution.png" align="center">
+</div>
+
+The data paints a clear picture: females frequently secure roles at an earlier age, reaching a career peak in their mid-twenties. In stark contrast, males follow a different script, attaining their career zenith later, typically in their late thirties. Intrigued by what forces drive this shift in career timelines and what other plots we would uncover we set off to analyze the careers of thousands of actors in the industry.
+
+For this we employ different analytical techniques. We utilize Markov chains to understand how actors transitions between genres , Shift-Timeseries to probe for age-related shifts actors careers, and adapt a method for DNA-Analysis to find similar careers. Find out who's the only Female that has a career equivalent to Jason Statham, Mel Gibson and Sean Connery or what Carrie Fisher and Chris Hemsworth have in common.
+
+While most of our analysis centers around genres, because its data is readily available, a big part of our work was to be able to take these analyses to the domain of which character types are played by which actors. Drawing inspiration from the script of "Learning Latent Personas of Film Characters" (2013) and extending upon it, we use modern Natural Language Processing (NLP) to extract character data from movie synopses, enhancing our exploration with a panoramic view of character tropes.
+
 
 # Characterizing genres
 

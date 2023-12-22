@@ -7,8 +7,9 @@ cover:  "/assets/movie_banner.jpg"
 
 <!-- Intro by Ben -->
 **INTRODUCTION : TODO BEN**
-
 Key question : **How do actors of different genders evolve through different genres in the movie industry?**
+
+hallo hllooooo?
 
 # Characterizing genres
 

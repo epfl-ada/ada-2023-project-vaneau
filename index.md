@@ -6,7 +6,6 @@ cover:  "/assets/movie_banner.jpg"
 ---
 
 <!-- Intro by Ben -->
-Key question : **How do actors of different genders evolve through different genres in the movie industry?**
 Take a seat, grab your popcorn, and join us with for our data story!!
 
 With an extensive dataset of movies, actors, and movie synopsis at our disposal we set on a journey to put on a spotlight on how biological sex influences career paths in the movie industry. The opening scene of our data story that sets the stage for our future analysis is this simple, but revealing plot:
@@ -19,12 +18,14 @@ The data paints a clear picture: females frequently secure roles at an earlier a
 
 For this we employ different analytical techniques. We utilize Markov chains to understand how actors transitions between genres , Shift-Timeseries to probe for age-related shifts actors careers, and adapt a method for DNA-Analysis to find similar careers. Find out who's the only Female that has a career equivalent to Jason Statham, Mel Gibson and Sean Connery or what Carrie Fisher and Chris Hemsworth have in common.
 
-While most of our analysis centers around genres, because its data is readily available, a big part of our work was to be able to take these analyses to the domain of which character types are played by which actors. Drawing inspiration from the script of "Learning Latent Personas of Film Characters" (2013) and extending upon it, we use modern Natural Language Processing (NLP) to extract character data from movie synopses, enhancing our exploration with a panoramic view of character tropes.
+While most of our analysis centers around genres, because its data is readily available, a big part of our work was to be able to take these analyses to the domain of which character types are played by which actors. Drawing inspiration from the script of [Learning Latent Personas of Film Characters](https://www.cs.cmu.edu/~ark/personas/) (2013) and extending upon it, we use modern Natural Language Processing (NLP) to extract character data from movie synopses, enhancing our exploration with a panoramic view of character tropes.
 
 
 # Characterizing genres
 
-A first look at our data more than **360** genres, therefore it seems relevant to reduce this diversity to have a more consistent analysis after.
+Because a lot of our later analytical methods depend on having a coherent genre
+clustering we put effort into structuring the more than **360**
+genres available in the Dataset.
 
 ## Genre clustering
 <!-- Romain -->
@@ -216,6 +217,12 @@ In this regard, we can say that :
 - "Jean Simmons" cluster (average-length career, mostly filled with drama movies) has 55% of women (quite high percentage)
 - "Clara Bow" cluster (actors from the classical Hollywood era (B&W movies), but with a shorter career than actors from the "Bette Davis" cluster) has 60% of women (sidekicks to male star actors ?)
 
+Here is an example of the "Jason Statham" cluster. Note that Angelina Jolie is the only Female representative of this career cluster. 
+
+<div align="center">
+<img alt="Jason Statham cluster"  src="images/Angelina.png">
+</div>
+
 # Opening question : is it possible to define a career through character types ?
 
 Using our own NLP model, we have tried to assign a type/trope for each "significant" (at least 5 related sentences in the corresponding movie synopsis) character in the dataset (about 30k characters labeled). Since we know the name of the actor/actress for each character in this dataframe, can we use this data to observe differences in the types of characters men and women are asked to play ?
@@ -247,4 +254,27 @@ From the three graphs above, one can see that :
 
 # Conclusion
 <!-- Ben -->
-**TODO BEN**
+In the closing scene of our exploration into gender dynamics within the movie
+industry, we'd like to point out once more the highlights of our data story. 
+
+We could show that the gravitational forces of genres for Men and Women are not the same. Our exploration of the dataset has unveiled the pull of 
+genres on actors. Some genres, such as  Drama, Comedy, and Thriller are universally attracting. Other genres, such as Romance and Action show a much more gender-specific attraction.
+
+We were able to expand on this findings with our results from our selfmade NLP-Classification of character types played by sex. We revealed that women are more cast into sterotyped roles. 
+
+With career timelines found something interesting: While the gravitational forces in the field are
+different, the dynamics of actors switching genres is similar between men and women (at least for
+established actors with longer careers). We also saw no age dependent spikes in genre switches, which is surprising, given the obvious difference age has on men and women in the industry.
+
+Looking at career paths as a whole we could find groups of actors that shared similar careers over time. Our results show statistically how under- or overrepresented women are in these career paths. The results again underscore the findings from our other analyses and would lend themselves well for more in depth analyses and case studies (such as Angelina Jolie braking into the Action field). 
+
+Looking ahead, we recommend applying these methodologies to compare evolving
+time periods, acknowledging the industry's ongoing transformation toward
+greater
+ equality. The dataset's mid-2010s cutoff, makes a
+ renewed exploration
+into the industry's present landscape interesting. As the curtains close
+ on our
+data journey our findings prompt for contemplation on the interplay between
+cinema,
+ gender, and societal evolution.

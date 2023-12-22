@@ -267,10 +267,9 @@ established actors with longer careers). We also saw no age dependent spikes in 
 Looking at career paths as a whole we could find groups of actors that shared similar careers over time. Our results show statistically how under- or overrepresented women are in these career paths. The results again underscore the findings from our other analyses and would lend themselves well for more in depth analyses and case studies (such as Angelina Jolie braking into the Action field). 
 
 Looking ahead, we recommend applying these methodologies to compare evolving
-time periods, acknowledging the industry's ongoing transformation toward
+time periods, as the industry is transforming towards
 greater
- equality. The dataset's mid-2010s cutoff, makes a
- renewed exploration
+ equality. The dataset's mid-2010s cutoff, makes another exploration
 into the industry's present landscape interesting. As the curtains close
  on our
 data journey our findings prompt for contemplation on the interplay between

@@ -179,8 +179,6 @@ But it does not reveal any difference between men and women's career paths. Mayb
 </div>
 
 
-
-
 ## Using the Levenshtein distance
 <!-- Lucas -->
 So far, most of our analyzes have not considered the actors' careers as a whole. In this part, we will try to compare and cluster careers, represented as sequences, with the Levenshtein distance.
@@ -223,7 +221,7 @@ Here is an example of the "Jason Statham" cluster. Note that Angelina Jolie is t
 <img alt="Jason Statham cluster"  src="images/Angelina.png">
 </div>
 
-# Opening question : is it possible to define a career through character types ?
+# Career path analysis based on character (NLP)
 
 Using our own NLP model, we have tried to assign a type/trope for each "significant" (at least 5 related sentences in the corresponding movie synopsis) character in the dataset (about 30k characters labeled). Since we know the name of the actor/actress for each character in this dataframe, can we use this data to observe differences in the types of characters men and women are asked to play ?
 
